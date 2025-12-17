@@ -1,3 +1,12 @@
 myenv/
 
-nenv/
+.venv/
+
+mobs.csv/
+
+li.py/
+
+jj.py/
+by_deadlines.csv/
+top_jobs.csv/
+
