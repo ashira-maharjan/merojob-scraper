@@ -31,7 +31,7 @@ jobs:
       run: |
         git config --global user.name "ashira-maharjan"
         git config --global user.email "ashiramaharjan13@gmail.com"
-        git add data/by_deadline.csv 
-        git add data/top_jobs.csv
+        git add data_file/by_deadline.csv 
+        git add data_file/top_jobs.csv
         git commit -m "Auto update job data" || echo "No changes"
         git push
