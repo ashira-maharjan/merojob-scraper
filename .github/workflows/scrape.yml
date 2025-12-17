@@ -1,8 +1,8 @@
-name: Auto Update Merojob Data (2 Hours)
+name: Auto Update Merojob Data (12 Hours)
 
 on:
   schedule:
-    - cron: "0 */2 * * *"
+    - cron: "0 */12 * * *"
   workflow_dispatch:
 
 jobs:
