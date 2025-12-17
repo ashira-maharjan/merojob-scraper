@@ -29,8 +29,9 @@ jobs:
 
     - name: Commit CSV changes
       run: |
-        git config --global user.name "github-actions"
-        git config --global user.email "github-actions@github.com"
-        git add mero__jobs.csv
+        git config --global user.name "ashira-maharjan"
+        git config --global user.email "ashiramaharjan13@gmail.com"
+        git add data/by_deadline.csv 
+        git add data/top_jobs.csv
         git commit -m "Auto update job data" || echo "No changes"
         git push

@@ -28,7 +28,7 @@ options.add_argument("--window-size=1920,1080")
 
 driver = webdriver.Chrome(options=options)
 driver.get("https://merojob.com/")
-wait = WebDriverWait(driver, 10)
+wait = WebDriverWait(driver, 30)
 
 # Click "Individual Jobs" tab
 try:
