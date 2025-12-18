@@ -97,18 +97,19 @@ driver.quit()
 # ---------------------------
 # Load existing CSV
 # ---------------------------
-def load_csv(path):
-    existing_keys = set()
-    data = []
-    if os.path.exists(path):
+def load_csv(path):  #file path csv file
+    existing_keys = set()  #set used to store unique identifier for each job 
+    data = [] #list 
+    if os.path.exists(path):   
         with open(path, "r", encoding="utf-8") as f:
-            reader = csv.DictReader(f)
+            reader = csv.DictReader(f)   # read each row as a dictionary
             for row in reader:
-                key = (row["Job Title"], row["Company"])
-                existing_keys.add(key)
-                data.append(row)
-    return existing_keys, data
+                key = (row["Job Title"], row["Company"])  # combine job title and company into a tuple
+                existing_keys.add(key)  # add key to the set
+                data.append(row)   #keep entire job record for later use
+    return existing_keys, data   #set of unique pais  and data list all csv as dictioneries
 
+#Using Functions
 top_keys, top_old = load_csv(TOP_JOBS_CSV)
 deadline_keys, deadline_old = load_csv(BY_DEADLINE_CSV)
 
@@ -118,11 +119,11 @@ deadline_keys, deadline_old = load_csv(BY_DEADLINE_CSV)
 def filter_new(jobs, existing_keys):
     new = []
     for j in jobs:
-        key = (j["Job Title"], j["Company"])
-        if key not in existing_keys:
-            new.append(j)
+        key = (j["Job Title"], j["Company"])  #create tuple that  unique identify the job 
+        if key not in existing_keys: #check if job is new
+            new.append(j) # add the job of list ofnew job 
             existing_keys.add(key)
-    return new
+    return new  # returns only the job that we not prevously known 
 
 top_new = filter_new(scraped_jobs, top_keys)
 deadline_new = filter_new(scraped_jobs, deadline_keys)
