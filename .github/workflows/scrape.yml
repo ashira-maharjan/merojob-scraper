@@ -1,4 +1,4 @@
-name: Auto Update Merojob Data (12 Hours)
+name: Auto Update Jobportal Data (12 Hours)
 
 on:
   schedule:
